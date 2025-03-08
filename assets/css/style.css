@@ -341,3 +341,90 @@ footer {
 .about-us  .content img {
     max-width: 40%;
 }
+
+/* Properties Listing */
+.properties-listing {
+    padding: 3rem 1rem;
+    background-color: var(--background-color);
+}
+
+.properties-listing .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.properties-listing h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+/* Property Cards */
+.properties .property-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.properties .property-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.properties .property-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.properties .property-info {
+    padding: 1.5rem;
+}
+
+.properties .property-info h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.properties .property-info .location {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.properties .property-info .price {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.properties .property-info .description {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.properties .property-info .btn-primary {
+    background-color: var(--accent-color);
+    padding: 1rem;
+    font-size: 1rem;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.properties .property-info .btn-primary:hover {
+    background-color: var(--highlight-color);
+}
+
