@@ -12,7 +12,7 @@
     <!-- Contact Information Section -->
     <section class="contact-info">
         <div class="container">
-            <div class="contact-details">
+            <div class="header-contact-details">
                 <span class="contact-email"><img class="icon" src="./assets/img/icons/email.png" alt="Mail icon">Email: info@abcproperty.com</span>
                 <span class="contact-phone"><img class="icon" src="./assets/img/icons/phone.png" alt="Phone icon">Phone: +61 123 456 789</span>
             </div>
@@ -31,11 +31,11 @@
                 <img src="./assets/img/icons/logo.png" alt="ABC Property Management Logo">
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="./pages/properties.html">Properties</a></li>
-                <li><a href="./pages/about.html">About Us</a></li>
-                <li><a href="./pages/contact.html">Contact</a></li>
-                <li id="userLink"><a href="./pages/login.html">Login</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="./pages/properties.php">Properties</a></li>
+                <li><a href="./pages/about.php">About Us</a></li>
+                <li><a href="./pages/contact.php">Contact</a></li>
+                <li id="userLink"><a href="./pages/login.php">Login</a></li>
             </ul>
         </div>
     </nav>
@@ -67,7 +67,7 @@
             <img src="./assets/img/icons/chat.png" alt="Icon representing customer support">
             <h2>Contact Us</h2>
             <p>Need help? Get in touch with us today.</p>
-            <a href="./pages/contact.html" class="btn-secondary">Contact Now</a>
+            <a href="./pages/contact.php" class="btn-secondary">Contact Now</a>
         </div>
     </section>
 
