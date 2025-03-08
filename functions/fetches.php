@@ -32,4 +32,22 @@ function fetch_property($property_id) {
         return null;
     }
 }
+
+function fetch_sellers() {
+    global $conn; 
+
+    $sql = "SELECT id, CONCAT(first_name, ' ', last_name) AS name FROM users WHERE role = 'seller'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $sellers = [];
+        while ($row = $result->fetch_assoc()) {
+            $sellers[] = $row;
+        }
+        return $sellers;
+    } else {
+        return false;
+    }
+}
+
 ?>

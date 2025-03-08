@@ -30,7 +30,7 @@ CREATE TABLE `users` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
     `email` VARCHAR(255) NOT NULL UNIQUE,
     `password` VARCHAR(255) NOT NULL,
-    `role` ENUM('admin', 'seller', 'buyer') NOT NULL,
+    `role` ENUM('admin', 'seller', 'buyer') NOT NULL DEFAULT 'buyer',
     `first_name` VARCHAR(255) NOT NULL,
     `last_name` VARCHAR(255) NOT NULL,
     `phone` VARCHAR(15),
@@ -44,3 +44,52 @@ INSERT INTO `users` (`email`, `password`, `role`, `first_name`, `last_name`, `ph
 ('seller1@abcproperty.com', '$2y$10$Hgt5omVzSYn1In9pZZzZY47ckF.3nqOwg3zmE/.Ubx7Yt3xfLg26S', 'seller', 'Carlos', 'Mendez', '0422334455', '456 Vendor Rd, Melbourne, VIC'),
 ('buyer1@abcproperty.com', '$2y$10$Hgt5omVzSYn1In9pZZzZY47ckF.3nqOwg3zmE/.Ubx7Yt3xfLg26S', 'buyer', 'Alice', 'Johnson', '0433445566', '789 Buyer Ln, Brisbane, QLD'),
 ('buyer2@abcproperty.com', '$2y$10$Hgt5omVzSYn1In9pZZzZY47ckF.3nqOwg3zmE/.Ubx7Yt3xfLg26S', 'buyer', 'David', 'Smith', '0498765432', '101 Client Ave, Hobart, TAS');
+
+CREATE TABLE `saved_properties` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `user_id` INT NOT NULL,
+    `property_id` INT NOT NULL,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`property_id`) REFERENCES `properties`(`id`) ON DELETE CASCADE
+);
+
+INSERT INTO `saved_properties` (`user_id`, `property_id`) VALUES
+(3, 1), 
+(3, 2); 
+
+CREATE TABLE `appointments` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `buyer_id` INT NOT NULL,
+    `seller_id` INT NOT NULL,
+    `property_id` INT NOT NULL,
+    `appointment_date` DATETIME NOT NULL,
+    `status` ENUM('Scheduled', 'Completed', 'Cancelled') DEFAULT 'Scheduled',
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`buyer_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`seller_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`property_id`) REFERENCES `properties`(`id`) ON DELETE CASCADE
+);
+
+
+INSERT INTO `appointments` (`buyer_id`, `seller_id`, `property_id`, `appointment_date`, `status`) VALUES
+(3, 5, 1, '2025-04-01 10:00:00', 'Scheduled'),  
+(3, 5, 2, '2025-04-02 14:00:00', 'Scheduled');  
+
+
+CREATE TABLE `transactions` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `user_id` INT NOT NULL,
+    `property_id` INT NOT NULL,
+    `transaction_type` ENUM('Purchase', 'Rent') NOT NULL,
+    `transaction_date` DATETIME NOT NULL,
+    `amount` DECIMAL(10, 2) NOT NULL,
+    `status` ENUM('Completed', 'Pending', 'Cancelled') DEFAULT 'Completed',
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (`user_id`) REFERENCES `users`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`property_id`) REFERENCES `properties`(`id`) ON DELETE CASCADE
+);
+
+INSERT INTO `transactions` (`user_id`, `property_id`, `transaction_type`, `transaction_date`, `amount`, `status`) VALUES
+(3, 1, 'Purchase', '2025-03-05 12:00:00', 450000.00, 'Completed'),  
+(3, 4, 'Rent', '2025-03-06 15:00:00', 2000.00, 'Completed');  

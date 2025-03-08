@@ -5,8 +5,8 @@
         <h1>Our Properties</h1>
         <div class="properties">
             <?php
-                include('../functions/fetch_properties.php');
-                $properties = fetch_properties();
+                include('../functions/fetches.php');
+                $properties = fetches();
 
                 if ($properties) {
                     foreach ($properties as $property) {
