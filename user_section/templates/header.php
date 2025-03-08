@@ -15,6 +15,7 @@ $userRole = isset($_SESSION['role']) ? $_SESSION['role'] : null;
     <title>ABC Property Management</title>
     <link rel="icon" href="../assets/img/icons/favicon.ico" type="image/png">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
@@ -26,16 +27,12 @@ $userRole = isset($_SESSION['role']) ? $_SESSION['role'] : null;
             </div>
             <ul class="nav-links">
                 <li><a href="../index.php">Home</a></li>
-                <li><a href="./properties.php">Properties</a></li>
-                <li><a href="./about.php">About Us</a></li>
-                <li><a href="./contact.php">Contact</a></li>
 
                 <?php if ($isLoggedIn): ?>
                     <?php if ($userRole === 'seller' || $userRole === 'admin'): ?>
                         <li><a href="./admin/dashboard.php">Dashboard</a></li>
                     <?php endif; ?>
                     <li><a href="./logout.php">Logout</a></li>
-                    <li><a href="../user_section/dashboard.php">Dashboard</a></li>
                 <?php else: ?>
                     <li><a href="./login.php">Login</a></li>
                 <?php endif; ?>

@@ -46,14 +46,12 @@ $userRole = isset($_SESSION['role']) ? $_SESSION['role'] : null;
                 <li><a href="./pages/contact.php">Contact</a></li>
 
                 <?php if ($isLoggedIn): ?>
-                    <!-- Mostrar o link para o Dashboard se for vendedor ou admin -->
                     <?php if ($userRole === 'seller' || $userRole === 'admin'): ?>
                         <li><a href="./admin/dashboard.php">Dashboard</a></li>
                     <?php endif; ?>
-                    <!-- Se usuário logado, não mostra o link de login -->
                     <li><a href="./pages/logout.php">Logout</a></li>
+                    <li><a href="./user_section/dashboard.php">Dashboard</a></li>
                 <?php else: ?>
-                    <!-- Mostrar link de login se não estiver logado -->
                     <li><a href="./pages/login.php">Login</a></li>
                 <?php endif; ?>
             </ul>
