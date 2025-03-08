@@ -1,4 +1,20 @@
-<?php include('./templates/header.php'); ?>
+<?php 
+
+include('./templates/header.php');
+session_start();
+
+if (isset($_GET['status']) && $_GET['status'] == 'success') {
+    if (isset($_SESSION['success'])) {
+        echo "<div class='alert success'>{$_SESSION['success']}</div>";
+        unset($_SESSION['success']); 
+    }
+} elseif (isset($_GET['status']) && $_GET['status'] == 'error') {
+    if (isset($_SESSION['error'])) {
+        echo "<div class='alert error'>{$_SESSION['error']}</div>";
+        unset($_SESSION['error']); 
+    }
+}
+?>
 
 <!-- Contact Us Section -->
 <section class="contact-us">
@@ -7,7 +23,7 @@
         <p>If you have any questions, feel free to reach out to us using the form below or through our contact details.</p>
 
         <!-- Contact Form -->
-        <form action="process_contact.php" method="POST" class="contact-form">
+        <form action="../functions/process_contact.php" method="POST" class="contact-form">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required placeholder="Enter your name">
 
@@ -26,6 +42,31 @@
             <p>Phone: <a href="tel:+61123456789">+61 123 456 789</a></p>
         </div>
     </div>
+
+    <!-- Success/Error Message -->
+    <div id="alert-container"></div>
 </section>
 
 <?php include('./templates/footer.php'); ?>
+
+<script>
+    $(document).ready(function() {
+        <?php if (isset($_SESSION['success'])): ?>
+            $('#alert-container').html(`
+                <div class="alert success">
+                    <?php echo $_SESSION['success']; ?>
+                </div>
+            `);
+            <?php unset($_SESSION['success']); ?>
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION['error'])): ?>
+            $('#alert-container').html(`
+                <div class="alert error">
+                    <?php echo $_SESSION['error']; ?>
+                </div>
+            `);
+            <?php unset($_SESSION['error']); ?>
+        <?php endif; ?>
+    });
+</script>

@@ -6,6 +6,7 @@
     <title>ABC Property Management</title>
     <link rel="icon" href="../assets/img/icons/favicon.ico" type="image/png">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <!-- Navbar -->

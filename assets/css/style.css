@@ -26,6 +26,34 @@ a {
     margin-right: 0.5rem;
 }
 
+/* Alert Styles */
+.alert {
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin: 1rem auto;
+    max-width: 65%;
+    width: auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.alert.success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.alert.error {
+    background-color: var(--error-color);
+    color: white;
+}
+
+.alert .close-btn {
+    margin-left: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 /* Contact bar */
 .contact-info {
     background-color: var(--accent-color);
