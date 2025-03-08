@@ -274,3 +274,70 @@ footer {
 .contact-details a:hover {
     text-decoration: underline;
 }
+
+/* About Us Page */
+.about-us {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-intro,
+.our-values,
+.our-approach,
+.why-choose-us {
+    margin-bottom: 2rem;
+}
+
+.about-us h1, .about-us h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.about-us p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.about-image {
+    max-width: 45%;
+    margin: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 8px;
+}
+
+.about-intro .about-image {
+    margin-left: 2rem;
+}
+
+.our-values .about-image {
+    margin-right: 2rem;
+}
+
+.why-choose-us .about-image {
+    margin-left: 2rem;
+}
+
+.about-us img {
+    max-width: 60%;
+    border-radius: 10px;
+}
+
+.about-us .content {
+    display: flex;
+}
+
+.about-us  .content .text {
+    max-width: 40%;
+}
+
+.about-us  .content img {
+    max-width: 40%;
+}
