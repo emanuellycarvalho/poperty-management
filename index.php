@@ -1,3 +1,12 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+$isLoggedIn = isset($_SESSION['user_id']);
+$userRole = isset($_SESSION['role']) ? $_SESSION['role'] : null;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +44,18 @@
                 <li><a href="./pages/properties.php">Properties</a></li>
                 <li><a href="./pages/about.php">About Us</a></li>
                 <li><a href="./pages/contact.php">Contact</a></li>
-                <li id="userLink"><a href="./pages/login.php">Login</a></li>
+
+                <?php if ($isLoggedIn): ?>
+                    <!-- Mostrar o link para o Dashboard se for vendedor ou admin -->
+                    <?php if ($userRole === 'seller' || $userRole === 'admin'): ?>
+                        <li><a href="./admin/dashboard.php">Dashboard</a></li>
+                    <?php endif; ?>
+                    <!-- Se usuário logado, não mostra o link de login -->
+                    <li><a href="./pages/logout.php">Logout</a></li>
+                <?php else: ?>
+                    <!-- Mostrar link de login se não estiver logado -->
+                    <li><a href="./pages/login.php">Login</a></li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>
@@ -71,11 +91,4 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 ABC Property Management. All rights reserved.</p>
-    </footer>
-
-    <script src="./assets/js/script.js"></script>
-</body>
-</html>
+    <?php include('./pages/templates/footer.php'); ?>

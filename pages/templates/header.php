@@ -1,3 +1,12 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+$isLoggedIn = isset($_SESSION['user_id']);
+$userRole = isset($_SESSION['role']) ? $_SESSION['role'] : null;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +29,15 @@
                 <li><a href="./properties.php">Properties</a></li>
                 <li><a href="./about.php">About Us</a></li>
                 <li><a href="./contact.php">Contact</a></li>
-                <li id="userLink"><a href="./login.php">Login</a></li>
+
+                <?php if ($isLoggedIn): ?>
+                    <?php if ($userRole === 'seller' || $userRole === 'admin'): ?>
+                        <li><a href="./admin/dashboard.php">Dashboard</a></li>
+                    <?php endif; ?>
+                    <li><a href="./logout.php">Logout</a></li>
+                <?php else: ?>
+                    <li><a href="./login.php">Login</a></li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>

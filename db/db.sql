@@ -26,3 +26,21 @@ INSERT INTO `properties` (`title`, `description`, `price`, `location`, `property
 ('Charming Studio Apartment', 'A 1-bedroom, 1-bathroom studio apartment in a central location, perfect for young professionals.', 1500.00, 'Sydney, NSW', 'For Rent', 1, 1, 0, 'property-5.jpg', false),  -- Exemplo de propriedade não disponível
 ('Country Retreat', 'A peaceful 4-bedroom, 2-bathroom home on a large plot of land. Ideal for those seeking privacy and space.', 600000.00, 'Hobart, TAS', 'For Sale', 4, 2, 2, 'property-6.jpg', true);
 
+CREATE TABLE `users` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `email` VARCHAR(255) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL,
+    `role` ENUM('admin', 'seller', 'buyer') NOT NULL,
+    `first_name` VARCHAR(255) NOT NULL,
+    `last_name` VARCHAR(255) NOT NULL,
+    `phone` VARCHAR(15),
+    `address` TEXT,
+    `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO `users` (`email`, `password`, `role`, `first_name`, `last_name`, `phone`, `address`) VALUES
+('admin@abcproperty.com', '$2y$10$Hgt5omVzSYn1In9pZZzZY47ckF.3nqOwg3zmE/.Ubx7Yt3xfLg26S', 'admin', 'John', 'Doe', '0412345678', '123 Admin St, Sydney, NSW'),
+('seller1@abcproperty.com', '$2y$10$Hgt5omVzSYn1In9pZZzZY47ckF.3nqOwg3zmE/.Ubx7Yt3xfLg26S', 'seller', 'Carlos', 'Mendez', '0422334455', '456 Vendor Rd, Melbourne, VIC'),
+('buyer1@abcproperty.com', '$2y$10$Hgt5omVzSYn1In9pZZzZY47ckF.3nqOwg3zmE/.Ubx7Yt3xfLg26S', 'buyer', 'Alice', 'Johnson', '0433445566', '789 Buyer Ln, Brisbane, QLD'),
+('buyer2@abcproperty.com', '$2y$10$Hgt5omVzSYn1In9pZZzZY47ckF.3nqOwg3zmE/.Ubx7Yt3xfLg26S', 'buyer', 'David', 'Smith', '0498765432', '101 Client Ave, Hobart, TAS');
