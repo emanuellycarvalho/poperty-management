@@ -17,7 +17,7 @@
                         echo '<p class="location">' . $property['location'] . '</p>';
                         echo '<p class="price">$' . number_format($property['price'], 2) . '</p>';
                         echo '<p class="description">' . substr($property['description'], 0, 150) . '...</p>';
-                        echo '<a href="#" class="btn-primary">View Details</a>';
+                        echo '<a href="property.php?id=' . $property['id'] . '" class="btn-primary">View Details</a>';
                         echo '</div>';
                         echo '</div>';
                     }

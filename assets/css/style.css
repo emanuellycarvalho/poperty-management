@@ -408,7 +408,7 @@ footer {
 
 .properties .property-info .description {
     font-size: 1rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -428,3 +428,78 @@ footer {
     background-color: var(--highlight-color);
 }
 
+/* Property Details */
+.property-details {
+    padding: 3rem 1rem;
+    background-color: var(--background-color);
+}
+
+.property-details .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.property-details .property-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.property-details .property-header h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.property-details .property-header .location {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-top: 0.5rem;
+}
+
+.property-details .property-header .price {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.property-details .property-image {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.property-details .property-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.property-details .property-description {
+    margin-bottom: 2rem;
+}
+
+.property-details .property-description h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.property-details .property-description p {
+    font-size: 1rem;
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+.property-details .property-contact {
+    text-align: center;
+}
+
+.property-details .property-contact a {
+    font-weight: bold;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.property-details .property-contact a:hover {
+    text-decoration: underline;
+}
