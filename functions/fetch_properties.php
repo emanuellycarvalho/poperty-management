@@ -3,9 +3,10 @@
 require_once('db_connect.php');
 
 function fetch_properties() {
-    global $conn;
+    global $conn; 
 
-    $sql = "SELECT * FROM properties";
+    
+    $sql = "SELECT * FROM properties WHERE available = 1";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -20,9 +21,9 @@ function fetch_properties() {
 }
 
 function fetch_property($property_id) {
-    global $conn;
+    global $conn; 
 
-    $sql = "SELECT * FROM properties WHERE id = $property_id";
+    $sql = "SELECT * FROM properties WHERE id = $property_id AND available = 1";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
