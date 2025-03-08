@@ -1,0 +1,183 @@
+/* Global styles */
+:root {
+    --primary-color: #023047;
+    --secondary-color: #219ebc;
+    --accent-color: #fb8500;
+    --highlight-color: #ffb703;
+    --background-color: #f6f6f6;
+    --success-color: #4caf50;
+    --error-color: #f44336;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.icon {
+    max-width: 1rem;
+    margin-right: 0.5rem;
+}
+
+/* Contact bar */
+.contact-info {
+    background-color: var(--accent-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.contact-info .container {
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info .contact-details {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.contact-info .contact-details .contact-email,
+.contact-info .contact-details .contact-phone {
+    font-size: 1rem;
+}
+
+.contact-info .social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-info .social-icons a {
+    display: block;
+}
+
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.navbar .logo img {
+    width: 5rem;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .nav-links li a {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.navbar .nav-links li a:hover {
+    color: var(--highlight-color);
+}
+
+#userLink a {
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero-banner.jpg') no-repeat center center/cover;
+    height: 30rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn-primary {
+    background-color: var(--accent-color);
+    padding: 0.75rem 2rem;
+    font-size: 1.125rem;
+    color: white;
+    border-radius: 0.3125rem;
+}
+
+.hero .btn-primary:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Three Section Layout */
+.three-sections {
+    display: flex;
+    justify-content: space-around;
+    padding: 3rem 0;
+    background-color: white;
+}
+
+.three-sections .section {
+    text-align: center;
+    width: 30%;
+}
+
+.three-sections .section img {
+    width: 5rem;
+    margin-bottom: 1.5rem;
+}
+
+.three-sections .section h2 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.three-sections .section p {
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+.three-sections .section .btn-secondary {
+    background-color: var(--highlight-color);
+    padding: 0.625rem 1.75rem;
+    font-size: 1rem;
+    color: white;
+    border-radius: 0.3125rem;
+}
+
+.three-sections .section .btn-secondary:hover {
+    background-color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.875rem;
+}
