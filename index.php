@@ -63,7 +63,7 @@ $userRole = isset($_SESSION['role']) ? $_SESSION['role'] : null;
         <div class="hero-content">
             <h1>Find Your Dream Property</h1>
             <p>Explore the best properties for sale and rent</p>
-            <a href="./pages/properties.html" class="btn-primary">Browse Properties</a>
+            <a href="./pages/properties.php" class="btn-primary">Browse Properties</a>
         </div>
     </section>
 
@@ -73,13 +73,13 @@ $userRole = isset($_SESSION['role']) ? $_SESSION['role'] : null;
             <img src="./assets/img/icons/home.png" alt="Icon representing property listings">
             <h2>For Sale</h2>
             <p>Browse the best properties available for sale.</p>
-            <a href="./pages/properties.html" class="btn-secondary">Explore Now</a>
+            <a href="./pages/properties.php" class="btn-secondary">Explore Now</a>
         </div>
         <div class="section">
             <img src="./assets/img/icons/rental-home.png" alt="Icon representing property rentals">
             <h2>For Rent</h2>
             <p>Find the perfect rental property for you.</p>
-            <a href="./pages/properties.html" class="btn-secondary">Explore Rentals</a>
+            <a href="./pages/properties.php" class="btn-secondary">Explore Rentals</a>
         </div>
         <div class="section">
             <img src="./assets/img/icons/chat.png" alt="Icon representing customer support">
