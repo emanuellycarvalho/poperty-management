@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 $isLoggedIn = isset($_SESSION['user_id']);
-$userRole = isset($_SESSION['role']) ? $_SESSION['role'] : null;
+$userRole = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : null;
 ?>
 
 <!DOCTYPE html>

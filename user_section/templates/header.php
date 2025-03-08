@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 $isLoggedIn = isset($_SESSION['user_id']);
-$userRole = isset($_SESSION['role']) ? $_SESSION['role'] : null;
+$userRole = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : null;
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ $userRole = isset($_SESSION['role']) ? $_SESSION['role'] : null;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC Property Management</title>
+    <title>ABC - User Dashboard</title>
     <link rel="icon" href="../assets/img/icons/favicon.ico" type="image/png">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="./style.css">

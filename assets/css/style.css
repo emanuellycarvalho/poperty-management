@@ -130,7 +130,7 @@ a {
 
 /* Hero Section */
 .hero {
-    background: url('hero-banner.jpg') no-repeat center center/cover;
+    background: url('../img/hero-banner.jpg') no-repeat center center/cover;
     height: 30rem;
     color: var(--primary-color);
     display: flex;
@@ -585,12 +585,14 @@ footer {
 
 /* Login Section */
 .login-section,
-.register-section {
+.register-section, .form-section {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background-color: #f4f4f4;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* Register Section Specific */

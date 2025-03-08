@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-if($_SESSION['role'] !== 'buyer'){
+if($_SESSION['user_role'] !== 'buyer'){
     header("Location: ../index.php");
     exit();
 }
