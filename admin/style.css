@@ -192,6 +192,21 @@ table tr:hover {
     background: var(--accent-color); /* Change background on hover */
 }
 
+.btn-success {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--success-color);
+    color: white;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.btn-success:hover {
+    background: #18681a; 
+}
+
 /* Footer styling */
 footer {
     background-color: var(--primary-color);
@@ -223,4 +238,3 @@ footer {
     width: 95%;
     color: var(--secondary-color);
 }
-

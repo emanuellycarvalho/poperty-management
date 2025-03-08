@@ -1,6 +1,6 @@
 <?php include('./templates/header.php'); 
 require_once('../functions/fetches.php');
-$properties = fetch_properties();
+$properties = fetch_all_properties();
 ?>
 
 <div class="property-container">
@@ -28,10 +28,15 @@ $properties = fetch_properties();
                 <td>$<?php echo number_format($property['price'], 2); ?></td>
                 <td><?php echo $property['location']; ?></td>
                 <td><?php echo $property['property_type']; ?></td>
-                <td><?php echo $property['available'] ? 'Yes' : 'No'; ?></td>
                 <td>
                     <a href="./add_property.php?id=<?php echo $property['id']; ?>" class="btn-edit">Edit</a>
-                    <a href="./functions/delete_property.php?id=<?php echo $property['id']; ?>" class="btn-error">Delete</a>
+                    <form action="./functions/toggle_property_status.php" method="GET">
+                        <input type="hidden" name="id" value="<?php echo $property['id']; ?>">
+                        <input type="hidden" name="status" value="<?php echo $property['available'] ? '0' : '1'; ?>">
+                        <button type="submit" class="<?php echo $property['available'] ? 'btn-error' : 'btn-success'; ?>">
+                            <?php echo $property['available'] ? 'Disable' : 'Enable'; ?>
+                        </button>
+                    </form>
                 </td>
             </tr>
             <?php endforeach; ?>

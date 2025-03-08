@@ -20,6 +20,24 @@ function fetch_properties() {
     }
 }
 
+function fetch_all_properties() {
+    global $conn; 
+
+    
+    $sql = "SELECT * FROM properties";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $properties = [];
+        while ($row = $result->fetch_assoc()) {
+            $properties[] = $row;
+        }
+        return $properties;
+    } else {
+        return false;
+    }
+}
+
 function fetch_property($property_id) {
     global $conn; 
 

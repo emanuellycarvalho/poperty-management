@@ -12,9 +12,6 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
         echo "<p>Property not found.</p>";
         exit;
     }
-} else {
-    echo "<p>Invalid property ID.</p>";
-    exit;
 }
 
 ?>

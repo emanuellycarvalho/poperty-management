@@ -8,6 +8,8 @@ if (!isset($_SESSION['user_id']) || !(($_SESSION['user_role'] != 'admin' || $_SE
     exit();
 }
 
+$isLoggedIn = isset($_SESSION['user_id']);
+$userRole = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : null;
 ?>
 
 <!DOCTYPE html>
@@ -30,15 +32,8 @@ if (!isset($_SESSION['user_id']) || !(($_SESSION['user_role'] != 'admin' || $_SE
             </div>
             <ul class="nav-links">
                 <li><a href="../index.php">Home</a></li>
-
-                <?php if ($isLoggedIn): ?>
-                    <?php if ($userRole === 'seller' || $userRole === 'admin'): ?>
-                        <li><a href="./admin/dashboard.php">Dashboard</a></li>
-                    <?php endif; ?>
-                    <li><a href="./logout.php">Logout</a></li>
-                <?php else: ?>
-                    <li><a href="./login.php">Login</a></li>
-                <?php endif; ?>
+                <li><a href="./properties.php">Properties</a></li>
+                <li><a href="../../functions/logout.php">Logout</a></li>
             </ul>
         </div>
     </nav>
