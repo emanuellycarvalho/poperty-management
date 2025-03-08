@@ -1,7 +1,9 @@
 <?php 
 
 include('./templates/header.php');
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 if (isset($_GET['status']) && $_GET['status'] == 'success') {
     if (isset($_SESSION['success'])) {
