@@ -653,6 +653,40 @@ footer {
     cursor: pointer;
 }
 
+.btn-error {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--error-color);
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-error img.fav {
+    width: 2rem;
+}
+
+
 .btn-primary:hover {
     background-color: var(--secondary-color);
+}
+
+.property-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.property-buttons .btn-primary,
+.property-buttons .btn-error {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
 }
