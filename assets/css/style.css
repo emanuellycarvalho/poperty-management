@@ -751,3 +751,162 @@ h1 {
 .accordion.active {
     background-color: #ccc;
 }
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .three-sections {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .three-sections .section {
+        width: 100%;
+    }
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1.125rem;
+    }
+    .contact-info .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar .logo img {
+        width: 4rem;
+    }
+    .three-sections {
+        padding: 2rem 0;
+    }
+    .three-sections .section {
+        width: 100%;
+        text-align: center;
+    }
+    .about-us .content {
+        flex-direction: column;
+    }
+    .about-us .content .text {
+        max-width: 100%;
+    }
+    .about-image {
+        max-width: 80%;
+    }
+    .properties .property-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 20rem;
+    }
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .properties-listing .container {
+        padding: 1rem;
+    }
+    .properties .property-card {
+        width: 100%;
+    }
+    .contact-form button {
+        width: 100%;
+    }
+    .about-us img {
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+    .contact-info .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar .nav-links li a {
+        font-size: 0.875rem;
+    }
+    .three-sections .section h2 {
+        font-size: 1.25rem;
+    }
+    .three-sections .section p {
+        font-size: 0.875rem;
+    }
+    .properties .property-info h2 {
+        font-size: 1.5rem;
+    }
+    .properties .property-info .price {
+        font-size: 1.25rem;
+    }
+    .form-container {
+        width: 100%;
+        padding: 1rem;
+    }
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+        font-size: 0.875rem;
+    }
+    .btn-primary {
+        padding: 0.75rem;
+    }
+    .contact-details {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow-x: auto;
+        display: block;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table th, table td {
+        padding: 1rem;
+        text-align: left;
+        font-size: 0.875rem;
+    }
+
+    table th {
+        font-size: 1rem;
+    }
+
+    table {
+        overflow-x: auto;
+        display: block;
+    }
+
+    table th, table td {
+        word-wrap: break-word;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    table th, table td {
+        font-size: 0.75rem; 
+        padding: 0.5rem;
+    }
+
+    table {
+        overflow-x: auto;
+        display: block;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
