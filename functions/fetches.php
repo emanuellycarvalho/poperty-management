@@ -141,7 +141,7 @@ function fetch_transactions($customer_id){
     global $conn;
     $query_transactions = "SELECT * FROM transactions t 
                            JOIN properties p ON t.property_id = p.id 
-                           WHERE t.user_id = ?";
+                           WHERE t.buyer_id = ?";
     $stmt = $conn->prepare($query_transactions);
 
     if ($stmt === false) {

@@ -5,7 +5,7 @@
 
     $user_id = $_SESSION['user_id'];
     $user = fetch_user($user_id);
-    $saved_properties = fetch_saved_properties( $user_id);
+    $saved_properties = fetch_saved_properties($user_id);
     $appointments = fetch_customers_appointments( $user_id);
     $transactions = fetch_transactions($user_id);
 ?>
