@@ -44,6 +44,7 @@ $userRole = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : null;
                 <li><a href="./pages/properties.php">Properties</a></li>
                 <li><a href="./pages/about.php">About Us</a></li>
                 <li><a href="./pages/contact.php">Contact</a></li>
+                <li><a href="./pages/faq.php">FAQ</a></li>
 
                 <?php if ($isLoggedIn): ?>
                     <?php if ($userRole === 'seller' || $userRole === 'admin'): ?>

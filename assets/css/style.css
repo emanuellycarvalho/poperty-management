@@ -703,3 +703,51 @@ footer {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Style for FAQ page */
+.faq-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Style for FAQ sections */
+.faq-section {
+    margin-bottom: 1.5rem;
+}
+
+.accordion {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.accordion:hover {
+    background-color: #ddd;
+}
+
+/* Style for the hidden panel (content) */
+.panel {
+    padding: 0 1rem;
+    display: none;
+    background-color: #f9f9f9;
+    margin-top: 0.5rem;
+    border-left: 2px solid #ddd;
+}
+
+/* Active accordion button style */
+.accordion.active {
+    background-color: #ccc;
+}
