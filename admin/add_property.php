@@ -9,7 +9,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $property = fetch_property($property_id);
     
     if (!$property) {
-        echo "<p>Property not found.</p>";
+        echo "<div class='alert error'>Property not found.</div>";
         exit;
     }
 }

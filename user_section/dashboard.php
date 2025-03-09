@@ -1,18 +1,22 @@
+<?php include('./templates/header.php'); ?>
+
 <?php
-    require_once('./functions/dashboard.php');
-    $saved_properties = fetch_saved_properties();
-    $appointments = fetch_appointments();
-    $transactions = fetch_transactions();
+    require_once('../functions/fetches.php');
+
+    $user_id = $_SESSION['user_id'];
+    $user = fetch_user($user_id);
+    $saved_properties = fetch_saved_properties( $user_id);
+    $appointments = fetch_customers_appointments( $user_id);
+    $transactions = fetch_transactions($user_id);
 ?>
 
-<?php include('./templates/header.php'); ?>
 <link rel="stylesheet" href="./style.css">
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css">
 
 <div class="dashboard-container">
     <div class="dashboard-header">
-        <h1>Welcome to Your Dashboard</h1>
+        <h1>Welcome to Your Dashboard, <?php echo $user['first_name']; ?> </h1>
     </div>
 
     <div class="dashboard-sections">
@@ -43,7 +47,7 @@
             <h2>Transaction History</h2>
             <ul>
                 <?php foreach ($transactions as $transaction): ?>
-                    <li><?php echo $transaction['title']; ?> - $<?php echo number_format($transaction['amount'], 2); ?> on <?php echo date("d M Y", strtotime($transaction['date'])); ?></li>
+                    <li><?php echo $transaction['title']; ?> - $<?php echo number_format($transaction['amount'], 2); ?> on <?php echo date("d M Y", strtotime($transaction['transaction_date'])); ?></li>
                 <?php endforeach; ?>
             </ul>
         </div>
