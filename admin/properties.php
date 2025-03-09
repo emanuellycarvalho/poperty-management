@@ -1,6 +1,18 @@
 <?php include('./templates/header.php'); 
 require_once('../functions/fetches.php');
 $properties = fetch_all_properties();
+
+if (isset($_GET['status']) && $_GET['status'] == 'success') {
+    if (isset($_SESSION['success'])) {
+        echo "<div class='alert success'>{$_SESSION['success']}</div>";
+        unset($_SESSION['success']); 
+    }
+} elseif (isset($_GET['status']) && $_GET['status'] == 'error') {
+    if (isset($_SESSION['error'])) {
+        echo "<div class='alert error'>{$_SESSION['error']}</div>";
+        unset($_SESSION['error']); 
+    }
+}
 ?>
 
 <div class="dashboard-container">
@@ -39,6 +51,7 @@ $properties = fetch_all_properties();
                                     <?php echo $property['available'] ? 'Disable' : 'Enable'; ?>
                                 </button>
                             </form>
+                            <a href="./sell_property.php?property_id=<?php echo $property['id']; ?>" class="btn-sell">Sell</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

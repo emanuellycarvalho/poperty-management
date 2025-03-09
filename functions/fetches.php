@@ -67,6 +67,17 @@ function fetch_sellers() {
     }
 }
 
+function fetch_clients() {
+    global $conn;
+    $query = "SELECT id, first_name, last_name FROM users WHERE role = 'buyer'";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $clients = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    $stmt->close();
+    return $clients;
+}
+
+
 function fetch_users(){
     global $conn; 
     
