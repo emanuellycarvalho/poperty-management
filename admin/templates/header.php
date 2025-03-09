@@ -32,9 +32,10 @@ $userRole = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : null;
             </div>
             <ul class="nav-links">
                 <li><a href="../index.php">Home</a></li>
+                <li><a href="./dashboard.php">Dashboard</a></li>
                 <li><a href="./properties.php">Properties</a></li>
                 <li><a href="./customers.php">Customers</a></li>
-                <li><a href="../../functions/logout.php">Logout</a></li>
+                <li><a href="../functions/logout.php">Logout</a></li>
             </ul>
         </div>
     </nav>
